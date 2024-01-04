@@ -19,7 +19,7 @@ const getById = async (req, res, next) => {
 
 const add = async (req, res, next) => {
    const body = req.body;
-   const newBicycle = await Bicycles.create({ ...body });
+   const newBicycle = await Bicycles.create({ ...body, status: 'available' });
    res.status(201).json(newBicycle);
 };
 
