@@ -1,4 +1,4 @@
-export const tickets = [
+const tickets = [
    {
       price: 13684,
       carrier: 'FV',
@@ -300,3 +300,7 @@ export const tickets = [
       ],
    },
 ];
+
+module.exports = {
+   tickets,
+};
