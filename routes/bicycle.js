@@ -10,6 +10,10 @@ const { schema, updateSchema } = require('../models/bicycle');
 
 router.get('/', ctrl.getAll);
 
+router.get('/search', ctrl.search);
+
+router.get('/tickets/:searchId', ctrl.getTickets);
+
 router.get('/:bicycleId', isValidId, ctrl.getById);
 
 router.post('/', validateBody(schema), ctrl.add);

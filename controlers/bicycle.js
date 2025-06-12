@@ -1,10 +1,21 @@
 const { Bicycles } = require('../models/bicycle');
+const { tickets } = require('./tickects');
 
 const { HttpError } = require('../helper');
 const { ctrlWrapper } = require('../helper');
 
 const getAll = async (req, res, next) => {
    const result = await Bicycles.find();
+   res.status(200).json(result);
+};
+
+const search = async (req, res, next) => {
+   const result = { searchId: '4niyd' };
+   res.status(200).json(result);
+};
+
+const getTickets = async (req, res, next) => {
+   const result = tickets;
    res.status(200).json(result);
 };
 
@@ -49,6 +60,8 @@ const updateById = async (req, res, next) => {
 };
 
 module.exports = {
+   search: ctrlWrapper(search),
+   getTickets: ctrlWrapper(getTickets),
    getAll: ctrlWrapper(getAll),
    getById: ctrlWrapper(getById),
    add: ctrlWrapper(add),
